@@ -1,15 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8" import="member.model.vo.Member"
-	errorPage="views/common/error.jsp"%>
-<%-- include 한 header.jsp 와 충돌나므로 제거함
-<%
-	Member loginMember = (Member)session.getAttribute("loginMember");
-%>  --%>
+	pageEncoding="UTF-8" errorPage="views/common/error.jsp"
+	isELIgnored="false"%>
+
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>test1</title>
+<title>testEl</title>
 <style type="text/css">
 div.lineA {
 	height: 100px;
@@ -51,7 +48,7 @@ div#banner img {
 	height: 110px;
 }
 </style>
-<script type="text/javascript" src="/test1/resources/js/jquery-3.5.1.min.js"></script>
+<script type="text/javascript" src="/testel/resources/js/jquery-3.5.1.min.js"></script>
 <script type="text/javascript">
 $(function(){
 		/*
@@ -67,7 +64,7 @@ $(function(){
 
 
 	$.ajax({
-		url : "/test1/ntop3",
+		url : "/testel/ntop3",
 		type : "get",
 		dataType : "json",
 		success : function(data) {
@@ -81,7 +78,7 @@ $(function(){
 			for ( var i in json.list) {
 				values += "<tr><td>"
 						+ json.list[i].no
-						+ "</td><td><a href='/test1/ndetail?noticeno="
+						+ "</td><td><a href='/testel/ndetail?noticeno="
 						+ json.list[i].no
 						+ "'>"
 						+ decodeURIComponent(json.list[i].title).replace(
@@ -99,7 +96,7 @@ $(function(){
 	
 		//조회수 많은 인기 게시 원글 3개 조회 출력 처리
 		$.ajax({
-				url: "/test1/btop3",
+				url: "/testel/btop3",
 				type: "get",
 				dataType: "json",
 				success : function(data) {
@@ -113,7 +110,7 @@ $(function(){
 					for ( var i in json.list) {
 						values += "<tr><td>"
 								+ json.list[i].bnum
-								+ "</td><td><a href='/test1/bdetail?bnum="
+								+ "</td><td><a href='/testel/bdetail?bnum="
 								+ json.list[i].bnum
 								+ "'>"
 								+ decodeURIComponent(json.list[i].btitle).replace(
@@ -145,10 +142,10 @@ $(function(){
 			<img src="resources/images/photo2.jpg">
 		</div>
 		<%
-			if (loginMember == null) { //로그인 안 한 상태이면
+			if ${empty loginMember}  { //로그인 안 한 상태이면
 		%>
 		<div id="loginBox" class="lineA">
-			test1 사이트 방문을 환영합니다.<br>
+			testEl 사이트 방문을 환영합니다.<br>
 			<!-- <button onclick="javascript:location.href='views/member/loginPage.html';">로그인 하세요.</button><br> -->
 			<button onclick="movePage();">로그인 하세요</button>
 			<br> <a>아이디/비밀번호 조회</a> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
@@ -158,14 +155,14 @@ $(function(){
 			} else if (loginMember.getUserid().equals("admin")) { //로그인한 사용자가 admin 이면
 		%>
 		<div id="loginBox" class="lineA">
-			<%=loginMember.getUsername()%>
+			${sessionScope.loginMember.userid }
 			님<br>
 			<button onclick="javascript:location.href='logout';">로그아웃</button>
 			<br>
 			<!-- <a href="/test1/mlist">회원관리</a> &nbsp; &nbsp; 
 <a>공지사항관리</a>  &nbsp; &nbsp; 
 <a>게시글관리</a> &nbsp; &nbsp;  -->
-			<a href="/test1/myinfo?userid=<%=loginMember.getUserid()%>">My
+			<a href="/testel/myinfo?userid=${sessionScope.loginMember.userid }">My
 				Page</a>
 			<!-- 쿼리스트링(Query String) : ?이름=전송값&이름=전송값 -->
 		</div>
@@ -173,12 +170,11 @@ $(function(){
 			} else { //일반 회원이 로그인한 상태이면
 		%>
 		<div id="loginBox" class="lineA">
-			<%=loginMember.getUsername()%>
-			님<br>
+			${sessionScope.loginMember.username}	님 <br>
 			<button onclick="javascript:location.href='logout';">로그아웃</button>
 			<br> <a>쪽지</a> &nbsp; &nbsp; <a>메일</a> &nbsp; &nbsp; &nbsp;
 			&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <a
-				href="/test1/myinfo?userid=<%=loginMember.getUserid()%>">My Page</a>
+				href="/testel/myinfo?userid=${sessionScope.loginMember.userid }">My Page</a>
 			<!-- 쿼리스트링(Query String) : ?이름=전송값&이름=전송값 -->
 		</div>
 		<%
