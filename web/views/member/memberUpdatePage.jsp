@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8" import="member.model.vo.Member" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%
 	Member member = (Member)request.getAttribute("member");
 	
@@ -30,7 +31,8 @@
 <title>testel</title>
 </head>
 <body>
-<%@ include file="../common/header.jsp" %>
+<%-- <%@ include file="../common/header.jsp" %> --%>
+<c:import url="../common/header.jsp"/>
 <hr>
 <h1 align="center">회원 정보 수정 페이지</h1>
 <br>
@@ -114,6 +116,7 @@
 </form>
 <hr>
 <!-- 상대경로만 사용 가능함 -->
-<%@ include file="../common/footer.jsp" %>
+<%-- <%@ include file="../common/footer.jsp" %> --%>
+<c:import url="../common/header.jsp"/>
 </body>
 </html>

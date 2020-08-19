@@ -59,7 +59,7 @@ hr { clear: both; }
 <body>
 <header>
 <h1 id="logo">testel</h1>
-<c:if test="${!empty loginMember and loginMember.userid eq 'admin' }">
+<c:if test="${ !empty loginMember and loginMember.userid eq 'admin' }">
    
 <ul id="menubar">
 <li><a href="/testel/mlist">회원관리</a></li>
@@ -73,7 +73,7 @@ hr { clear: both; }
 <li><a href="/testel/index.jsp">Home</a></li>
 </ul>
 </c:if>   
-<c:if test="${!empty loginMember }" >
+<c:if test="${ !empty sessionScope.loginMember and loginMember.userid ne 'admin' }" >
 <ul id="menubar">
 <li><a href="/testel/mlist">암호화회원가입</a></li>
 <li><a href="/testel/nlist">공지사항</a></li>
@@ -85,7 +85,7 @@ hr { clear: both; }
 <li><a href="/testel/index.jsp">Home</a></li>
 </ul>  
 </c:if>
-<c:if test="${empty sessionScope.loginMember }" >
+<c:if test="${ empty sessionScope.loginMember }" >
 <ul id="menubar">
 <li><a href="/testel/views/member/enrollPage.html">회원가입</a></li>
 <li><a href="/testel/nlist">공지사항</a></li>

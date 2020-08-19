@@ -136,14 +136,15 @@ $(function(){
 </script>
 </head>
 <body>
-	<%@ include file="views/common/header.jsp"%>
+	<%-- <%@ include file="views/common/header.jsp"%> --%>
+	<c:import url="views/common/header.jsp"/>
 	<hr style="clear: both;">
 	<center>
 		<div id="banner" class="lineA">
 			<img src="resources/images/photo2.jpg">
 		</div>
 		
-			<c:if test="${empty loginMember}" >
+			<c:if test="${ empty loginMember }" >
 		
 		<div id="loginBox" class="lineA">
 			testEl 사이트 방문을 환영합니다.<br>
@@ -153,17 +154,17 @@ $(function(){
 			&nbsp; &nbsp; &nbsp; &nbsp; <a href="views/member/enrollPage.html">회원가입</a>
 		</div>
 		</c:if>
-		<c:if test="${!empty loginMember and loginMember.userid eq 'admin'} "> <%--userid 는 vo에 있는 변수명 --%>
+		<c:if test="${ !empty loginMember and loginMember.userid eq 'admin' } "> <%--userid 는 vo에 있는 변수명 --%>
 		
 		<div id="loginBox" class="lineA">
-			${sessionScope.loginMember.userid }
+			${ sessionScope.loginMember.userid }
 			님<br>
 			<button onclick="javascript:location.href='logout';">로그아웃</button>
 			<br>
 			<!-- <a href="/test1/mlist">회원관리</a> &nbsp; &nbsp; 
 <a>공지사항관리</a>  &nbsp; &nbsp; 
 <a>게시글관리</a> &nbsp; &nbsp;  -->
-			<a href="/testel/myinfo?userid=${sessionScope.loginMember.userid }">My
+			<a href="/testel/myinfo?userid=${ sessionScope.loginMember.userid }">My
 				Page</a>
 			<!-- 쿼리스트링(Query String) : ?이름=전송값&이름=전송값 -->
 		</div>
@@ -174,7 +175,7 @@ $(function(){
 			<button onclick="javascript:location.href='logout';">로그아웃</button>
 			<br> <a>쪽지</a> &nbsp; &nbsp; <a>메일</a> &nbsp; &nbsp; &nbsp;
 			&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <a
-				href="/testel/myinfo?userid=${sessionScope.loginMember.userid }">My Page</a>
+				href="/testel/myinfo?userid=${ sessionScope.loginMember.userid }">My Page</a>
 			<!-- 쿼리스트링(Query String) : ?이름=전송값&이름=전송값 -->
 		</div>
 		</c:if>
@@ -208,7 +209,9 @@ $(function(){
 	</section>
 	<hr style="clear: both;">
 	<!-- 상대경로만 사용 가능함 -->
-	<%@ include file="views/common/footer.jsp"%>
+	<%-- <%@ include file="views/common/footer.jsp"%> --%>
+	<c:import url="views/common/footer.jsp"/>
+	
 </body>
 </html>
 

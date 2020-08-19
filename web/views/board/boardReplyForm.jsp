@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%
 		//boardDetailView.jsp 가 보낸 파라미터 값 꺼내기
 		int boardNum = Integer.parseInt(request.getParameter("bnum"));
@@ -13,7 +14,8 @@
 </head>
 <body>
 <h1 align="center"><%= boardNum %> 번 글 댓글달기 페이지</h1>
-<%@ include file="../common/header.jsp" %>
+<%-- <%@ include file="../common/header.jsp" %> --%>
+<c:import url="../common/header.jsp"/>
 <hr>
 <form action="/testel/breply" method="post" >
 <input type ="hidden" name="bnum" value="<%= boardNum %>">

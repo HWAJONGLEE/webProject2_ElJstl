@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8" import="notice.model.vo.Notice" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%
 	Notice notice = (Notice)request.getAttribute("notice");	
 %>    
@@ -10,7 +11,8 @@
 <title>testel</title>
 </head>
 <body>
-<%@ include file="../common/header.jsp" %>
+<%-- <%@ include file="../common/header.jsp" %> --%>
+<c:import url="../common/header.jsp"/>
 <hr>
 <h2 align="center"><%= notice.getNoticeNo() %> 번 공지 상세보기</h2>
 <br>

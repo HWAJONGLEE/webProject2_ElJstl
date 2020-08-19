@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page import="member.model.vo.Member, java.util.ArrayList" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%
 	ArrayList<Member> list = (ArrayList<Member>)request.getAttribute("list");
 %>    
@@ -56,7 +57,8 @@ function changeLogin(element){
 </script>
 </head>
 <body>
-<%@ include file="../common/header.jsp" %>
+<%-- <%@ include file="../common/header.jsp" %> --%>
+<c:import url="../common/header.jsp"/>
 <hr>
 <h1 align="center">전체 회원 관리 페이지</h1>
 <h2 align="center">현재 회원수 : <%= list.size() %> 명</h2>
@@ -167,7 +169,8 @@ value="false" checked> 제한
 </table>
 <hr>
 <!-- 상대경로만 사용 가능함 -->
-<%@ include file="../common/footer.jsp" %>
+<%-- <%@ include file="../common/footer.jsp" %> --%>
+<c:import url="../common/header.jsp"/>
 </body>
 </html>
 

@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page import="board.model.vo.Board" %>
 <%
 		Board board = (Board)request.getAttribute("board");
@@ -12,7 +13,8 @@
 <title>testel</title>
 </head>
 <body>
-<%@ include file="../common/header.jsp" %>
+<%-- <%@ include file="../common/header.jsp" %> --%>
+<c:import url="../common/header.jsp"/>
 <hr>
 <h1 align="center"><%= board.getBoardNum() %>번 게시글 수정 페이지</h1>
 <!--  원글 수정 폼 -->
