@@ -59,9 +59,9 @@ public class CryptoEnrollServlet extends HttpServlet {
 
 	      // 4. 받은 결과에 따라 성공/실패 뷰 선택해서 내보내기
 	      if (result > 0) {
-	         response.sendRedirect("/test1/views/test/loginPage.html");
+	         response.sendRedirect("/testel/views/test/loginPage.html");
 	      } else {
-	         // response.sendRedirect("/test1/views/common/error.jsp");
+	         // response.sendRedirect("/testel/views/common/error.jsp");
 
 	         RequestDispatcher view = request.getRequestDispatcher("views/common/error.jsp");
 	         request.setAttribute("message", "회원 가입 실패!");

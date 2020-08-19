@@ -8,14 +8,14 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>test1</title>
+<title>testel</title>
 </head>
 <body>
 <%@ include file="../common/header.jsp" %>
 <hr>
 <h2 align="center"><%= notice.getNoticeNo() %> 번 글 수정페이지</h2>
 <br>
-<form action="/test1/nupdate.ad" method="post" enctype="multipart/form-data" >
+<form action="/testel/nupdate.ad" method="post" enctype="multipart/form-data" >
 <input type="hidden" name="no" value="<%= notice.getNoticeNo()%>">
 <input type="hidden" name="ofile" value="<%= notice.getOriginalFilepath()%>">
 <input type= "hidden" name= "rfile" value= "<%= notice.getRenameFilepath() %>">

@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8" errorPage="views/common/error.jsp"
 	isELIgnored="false"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <!DOCTYPE html>
 <html>
@@ -141,9 +142,9 @@ $(function(){
 		<div id="banner" class="lineA">
 			<img src="resources/images/photo2.jpg">
 		</div>
-		<%
-			if ${empty loginMember}  { //로그인 안 한 상태이면
-		%>
+		
+			<c:if test="${empty loginMember}" >
+		
 		<div id="loginBox" class="lineA">
 			testEl 사이트 방문을 환영합니다.<br>
 			<!-- <button onclick="javascript:location.href='views/member/loginPage.html';">로그인 하세요.</button><br> -->
@@ -151,9 +152,9 @@ $(function(){
 			<br> <a>아이디/비밀번호 조회</a> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
 			&nbsp; &nbsp; &nbsp; &nbsp; <a href="views/member/enrollPage.html">회원가입</a>
 		</div>
-		<%
-			} else if (loginMember.getUserid().equals("admin")) { //로그인한 사용자가 admin 이면
-		%>
+		</c:if>
+		<c:if test="${!empty loginMember and loginMember.userid eq 'admin'} "> <%--userid 는 vo에 있는 변수명 --%>
+		
 		<div id="loginBox" class="lineA">
 			${sessionScope.loginMember.userid }
 			님<br>
@@ -166,9 +167,8 @@ $(function(){
 				Page</a>
 			<!-- 쿼리스트링(Query String) : ?이름=전송값&이름=전송값 -->
 		</div>
-		<%
-			} else { //일반 회원이 로그인한 상태이면
-		%>
+		</c:if>
+		<c:if test="${ !empty sessionScope.loginMember }">
 		<div id="loginBox" class="lineA">
 			${sessionScope.loginMember.username}	님 <br>
 			<button onclick="javascript:location.href='logout';">로그아웃</button>
@@ -177,9 +177,7 @@ $(function(){
 				href="/testel/myinfo?userid=${sessionScope.loginMember.userid }">My Page</a>
 			<!-- 쿼리스트링(Query String) : ?이름=전송값&이름=전송값 -->
 		</div>
-		<%
-			}
-		%>
+		</c:if>
 		<hr style="clear: left;">
 	</center>
 	<section>

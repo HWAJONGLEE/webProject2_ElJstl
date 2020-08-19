@@ -43,7 +43,7 @@ public class BoardReplyUpdateServlet extends HttpServlet {
 			int result = new BoardService().updateReply(reply);
 			
 			if (result > 0) {
-					response.sendRedirect("/test1/blist?page=" + currentPage);
+					response.sendRedirect("/testel/blist?page=" + currentPage);
 			}else {
 					RequestDispatcher view = request.getRequestDispatcher("views/common/error.jsp");
 					request.setAttribute("message", reply.getBoardNum() + "번 댓글 수정 실패!");

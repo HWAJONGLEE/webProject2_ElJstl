@@ -8,14 +8,14 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>test1</title>
+<title>testel</title>
 </head>
 <body>
 <%@ include file="../common/header.jsp" %>
 <hr>
 <h1 align="center">공지사항</h1>
 <div style="text-align:center;">
-<button onclick="javascript:location.href='/test1/views/notice/noticeWriteForm.jsp';">공지글 등록</button>
+<button onclick="javascript:location.href='/testel/views/notice/noticeWriteForm.jsp';">공지글 등록</button>
 </div>
 <br>
 <table align="center" width="500" border="1" cellspacing="0" 
@@ -25,7 +25,7 @@ cellpadding="1">
 <% for(Notice n : list){ %>
 <tr>
 <td align="right"><%= n.getNoticeNo() %></td>
-<td><a href="/test1/andetail?noticeno=<%= n.getNoticeNo() %>"><%= n.getNoticeTitle() %></a></td>
+<td><a href="/testel/andetail?noticeno=<%= n.getNoticeNo() %>"><%= n.getNoticeTitle() %></a></td>
 <td><%= n.getNoticeWriter() %></td>
 <td align="center">
 	<% if(n.getOriginalFilepath() != null){ %>

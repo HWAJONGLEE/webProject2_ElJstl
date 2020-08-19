@@ -40,7 +40,7 @@ public class BoardDeleteServlet extends HttpServlet {
 					String savePath = request.getSession().getServletContext().getRealPath("/resources/bupfiles");
 					new File(savePath + "\\" + renameFileName).delete();
 				}
-					response.sendRedirect("/test1/blist?page=1");
+					response.sendRedirect("/testel/blist?page=1");
 			}else {
 					RequestDispatcher view = request.getRequestDispatcher("views/common/error.jsp");
 					request.setAttribute("message", boardNum + "번 글 삭제 실패!");

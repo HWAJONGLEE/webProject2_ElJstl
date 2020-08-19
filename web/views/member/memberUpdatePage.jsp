@@ -27,14 +27,14 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>test1</title>
+<title>testel</title>
 </head>
 <body>
 <%@ include file="../common/header.jsp" %>
 <hr>
 <h1 align="center">회원 정보 수정 페이지</h1>
 <br>
-<form method="post" action="/test1/mupdate">
+<form method="post" action="/testel/mupdate">
 <table id="outer" align="center" width="500" cellspacing="5" cellpadding="0">
 <tr>
 	<th width="120">이 름</th>
@@ -107,7 +107,7 @@
 		<a href="javascript:history.go(-1);">이전 페이지로 이동</a> &nbsp; 
 		<input type="submit" value="수정하기"> &nbsp; 
 		<input type="reset" value="수정취소"> &nbsp; 		
-		<a href="/test1/index.jsp">시작 페이지로</a>
+		<a href="/testel/index.jsp">시작 페이지로</a>
 	</th>	
 </tr>
 </table>

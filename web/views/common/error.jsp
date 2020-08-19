@@ -16,7 +16,7 @@
 <h3>Servlet 메세지 : <%= request.getAttribute("message") %></h3>
 <% } %>
 <br>
-<a href="/test1/index.jsp">시작페이지로 이동</a>
+<a href="/testel/index.jsp">시작페이지로 이동</a>
 
 </body>
 </html>

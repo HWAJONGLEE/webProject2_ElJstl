@@ -9,7 +9,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>test1</title>
+<title>testel</title>
 </head>
 <body>
 <%@ include file="../common/header.jsp" %>
@@ -19,7 +19,7 @@
 <% if(board.getBoardLevel() ==0){//원글이면 %>
 <!-- form 에서 입력값들과 파일을 같이 전송하려면 
 		반드시 enctype="multipart/form-data" 속성을 추가해야 함-->
-<form action="/test1/boriginup" method="post" enctype="multipart/form-data" >
+<form action="/testel/boriginup" method="post" enctype="multipart/form-data" >
 <input type="hidden" name="bnum" value="<%= board.getBoardNum() %>">
 <input type="hidden" name="page" value= "<%= currentPage %>">
 <input type="hidden" name="ofile" value="<%= board.getBoardOriginalFileName() %>">
@@ -51,7 +51,7 @@ cellpadding="5">
 </table>
 </form>
 <% }else{  //댓글 또는 대댓글일때의 폼 %>
-<form action="/test1/breplyup" method="post" >
+<form action="/testel/breplyup" method="post" >
 <input type="hidden" name="bnum" value="<%= board.getBoardNum() %>">
 <input type="hidden" name="page" value= "<%= currentPage %>">
 <table align="center" width="500" border="1" cellspacing="0" 

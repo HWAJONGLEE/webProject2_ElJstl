@@ -9,13 +9,13 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>test1</title>
+<title>testel</title>
 </head>
 <body>
 <h1 align="center"><%= boardNum %> 번 글 댓글달기 페이지</h1>
 <%@ include file="../common/header.jsp" %>
 <hr>
-<form action="/test1/breply" method="post" >
+<form action="/testel/breply" method="post" >
 <input type ="hidden" name="bnum" value="<%= boardNum %>">
 <input type = "hidden" name= "page" value = "<%=currentPage %>">
 <table align="center" width="500" border="1" cellspacing="0" 
@@ -32,7 +32,7 @@ cellpadding="5">
 <tr><th colspan="2">
 <input type="submit" value="등록하기"> &nbsp; 
 <input type="reset" value="작성취소"> &nbsp;
-<input type= "button" value="목록" onclick="javascript:location.href='/test1/blist?page=<%=currentPage %>'"> 
+<input type= "button" value="목록" onclick="javascript:location.href='/testel/blist?page=<%=currentPage %>'"> 
 </th></tr>
 </table>
 </form>

@@ -69,7 +69,7 @@ public class BoardReplyServlet extends HttpServlet {
 		int result = bservice.insertReply(reply);
 		
 		if (result > 0 ) {
-				response.sendRedirect("/test1/blist?page=" + currentPage);
+				response.sendRedirect("/testel/blist?page=" + currentPage);
 		}else {
 			RequestDispatcher view = request.getRequestDispatcher("views/common/error.jsp");
 			request.setAttribute("message", boardNum + "번 게시글 등록 실패 !");

@@ -14,10 +14,10 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>test1</title>
+<title>testel</title>
 <script type="text/javascript">
    function showWriteForm() {
-      location.href = "/test1/views/board/boardWriteForm.jsp";
+      location.href = "/testel/views/board/boardWriteForm.jsp";
    }
 </script>
 </head>
@@ -59,7 +59,7 @@
                <%} %>
                <!-- 로그인한 사용자만(회원만) 상세보기 할 수 있게 함 -->
                <% if(loginMember != null){ %>
-               		<a href="/test1/bdetail?bnum=<%= b.getBoardNum() %>&page=<%=currentPage%>"><%= b.getBoardTitle() %></a>
+               		<a href="/testel/bdetail?bnum=<%= b.getBoardNum() %>&page=<%=currentPage%>"><%= b.getBoardTitle() %></a>
                <% }else{ %>
                <%= b.getBoardTitle() %>
                <%} %>
@@ -83,11 +83,11 @@
 	<% if(currentPage <= 1){ %>
 			[첫페이지]&nbsp;
 	<%}else{ %>
-			<a href="/test1/blist?page=1">[맨처음]</a>
+			<a href="/testel/blist?page=1">[맨처음]</a>
 	<%} %>
 	<!--  이전 그룹으로 이동 처리  -->
 	<% if((currentPage - 10) < startPage && (currentPage - 10) > 1){ %>
-	<a href="/test1/blist?page=<%= startPage - 10%>">[이전그룹]</a>
+	<a href="/testel/blist?page=<%= startPage - 10%>">[이전그룹]</a>
 	<%}else{ %>
 			[이전그룹]&nbsp;
 	<%} %>
@@ -96,12 +96,12 @@
 			if(p == currentPage){%>
 			<font color="red" size="4"><b>[<%= p %>]</b></font>
 			<%}else{ %>
-			<a href="/test1/blist?page=<%= p %>"><%= p %></a>
+			<a href="/testel/blist?page=<%= p %>"><%= p %></a>
 	
 	<% }} %>
 	<!-- 다음 그룹으로 이동 처리 -->
 	<% if((currentPage + 10) > endPage && (currentPage + 10) < maxPage){ %>
-	<a href="/test1/blist?page=<%= endPage + 10 %>">[다음그룹]</a>
+	<a href="/testel/blist?page=<%= endPage + 10 %>">[다음그룹]</a>
 	<%}else{ %>
 			[다음그룹]&nbsp;
 	<%} %>
@@ -110,7 +110,7 @@
 <% if(currentPage >=maxPage){ %>
 			[맨끝]&nbsp;
 	<%}else{ %>
-			<a href="/test1/blist?page=<%=maxPage %>">[맨끝]</a>
+			<a href="/testel/blist?page=<%=maxPage %>">[맨끝]</a>
 	<%} %>
 		
 	</div>

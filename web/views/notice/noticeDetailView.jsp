@@ -7,7 +7,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>test1</title>
+<title>testel</title>
 </head>
 <body>
 <%@ include file="../common/header.jsp" %>
@@ -23,7 +23,7 @@ cellpadding="5">
 	<th>첨부파일</th>
 	<td>
 		<% if(notice.getOriginalFilepath() != null){ %>
-		<a href="/test1/nfdown?ofile=<%= notice.getOriginalFilepath() %>&rfile=<%= notice.getRenameFilepath() %>"><%= notice.getOriginalFilepath() %></a>
+		<a href="/testel/nfdown?ofile=<%= notice.getOriginalFilepath() %>&rfile=<%= notice.getRenameFilepath() %>"><%= notice.getOriginalFilepath() %></a>
 		<% }else{ %>
 		&nbsp;
 		<% } %>

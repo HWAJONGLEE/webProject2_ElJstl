@@ -8,7 +8,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>test1</title>
+<title>testel</title>
 </head>
 <body>
 <%@ include file="../common/header.jsp" %>
@@ -22,7 +22,7 @@ cellpadding="1">
 <% for(Notice n : list){ %>
 <tr>
 <td align="right"><%= n.getNoticeNo() %></td>
-<td><a href="/test1/ndetail?noticeno=<%= n.getNoticeNo() %>"><%= n.getNoticeTitle() %></a></td>
+<td><a href="/testel/ndetail?noticeno=<%= n.getNoticeNo() %>"><%= n.getNoticeTitle() %></a></td>
 <td><%= n.getNoticeWriter() %></td>
 <td align="center">
 	<% if(n.getOriginalFilepath() != null){ %>

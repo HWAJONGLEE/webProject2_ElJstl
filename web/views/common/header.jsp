@@ -1,11 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8" %>
-   
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>test1</title>
+<title>testel</title>
 <style type="text/css">
 header { margin : 0; padding: 0; }
 header h1#logo {
@@ -58,44 +58,46 @@ hr { clear: both; }
 </head>
 <body>
 <header>
-<h1 id="logo">test1</h1>
-<% if(loginMember != null && loginMember.getUserid().equals("admin")){ 
-    //관리자가 로그인했을 때  %>
+<h1 id="logo">testel</h1>
+<c:if test="${!empty loginMember and loginMember.userid eq 'admin' }">
+   
 <ul id="menubar">
-<li><a href="/test1/mlist">회원관리</a></li>
-<li><a href="/test1/nlist.ad">공지글관리</a></li>
-<li><a href="/test1/blist">게시글관리</a></li>
+<li><a href="/testel/mlist">회원관리</a></li>
+<li><a href="/testel/nlist.ad">공지글관리</a></li>
+<li><a href="/testel/blist">게시글관리</a></li>
 <li><a href="#">QnA관리</a></li>
 <li><a href="#">사진게시판관리</a></li>
 
-<li><a href= "/test1/views/test/testPage.jsp">필터테스트</a></li>
+<li><a href= "/testel/views/test/testPage.jsp">필터테스트</a></li>
 <li><a href="#">#</a></li>
-<li><a href="/test1/index.jsp">Home</a></li>
-</ul>   
-<% }else if(loginMember != null){  //일반 회원이 로그인했을 때 %>
+<li><a href="/testel/index.jsp">Home</a></li>
+</ul>
+</c:if>   
+<c:if test="${!empty loginMember }" >
 <ul id="menubar">
-<li><a href="/test1/mlist">암호화회원가입</a></li>
-<li><a href="/test1/nlist">공지사항</a></li>
-<li><a href="/test1/blist?page=1">게시글</a></li>
+<li><a href="/testel/mlist">암호화회원가입</a></li>
+<li><a href="/testel/nlist">공지사항</a></li>
+<li><a href="/testel/blist?page=1">게시글</a></li>
 <li><a href="#">QnA</a></li>
 <li><a href="#">사진게시판</a></li>
-<li><a href= "/test1/views/test/testPage.jsp">필터테스트</a></li>
+<li><a href= "/testel/views/test/testPage.jsp">필터테스트</a></li>
 <li><a href="#">#</a></li>
-<li><a href="/test1/index.jsp">Home</a></li>
+<li><a href="/testel/index.jsp">Home</a></li>
 </ul>  
-<% }else{ //로그인하지 않았을 때 %>
+</c:if>
+<c:if test="${empty sessionScope.loginMember }" >
 <ul id="menubar">
-<li><a href="/test1/views/member/enrollPage.html">회원가입</a></li>
-<li><a href="/test1/nlist">공지사항</a></li>
-<li><a href="/test1/blist?page=1">게시글</a></li>
+<li><a href="/testel/views/member/enrollPage.html">회원가입</a></li>
+<li><a href="/testel/nlist">공지사항</a></li>
+<li><a href="/testel/blist?page=1">게시글</a></li>
 <li><a href="#">QnA</a></li>
-<li><a href="/test1/views/test/cryptoEnrollPage.html">암호화회원가입</a></li>
+<li><a href="/testel/views/test/cryptoEnrollPage.html">암호화회원가입</a></li>
 
-<li><a href= "/test1/views/test/testPage.jsp">필터테스트</a></li>
+<li><a href= "/testel/views/test/testPage.jsp">필터테스트</a></li>
 <li><a href="#">#</a></li>
-<li><a href="/test1/index.jsp">Home</a></li>
+<li><a href="/testel/index.jsp">Home</a></li>
 </ul>  
-<% } %>
+</c:if>
 </header>
 </body>
 </html>

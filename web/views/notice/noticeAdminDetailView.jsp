@@ -7,7 +7,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>test1</title>
+<title>testel</title>
 </head>
 <body>
 <%@ include file="../common/header.jsp" %>
@@ -23,7 +23,7 @@ cellpadding="5">
 	<th>첨부파일</th>
 	<td>
 		<% if(notice.getOriginalFilepath() != null){ %>
-		<a href="/test1/nfdown?ofile=<%= notice.getOriginalFilepath() %>&rfile=<%= notice.getRenameFilepath() %>"><%= notice.getOriginalFilepath() %></a>
+		<a href="/testel/nfdown?ofile=<%= notice.getOriginalFilepath() %>&rfile=<%= notice.getRenameFilepath() %>"><%= notice.getOriginalFilepath() %></a>
 		<% }else{ %>
 		&nbsp;
 		<% } %>
@@ -31,8 +31,8 @@ cellpadding="5">
 </tr>
 <tr><th>내 용</th><td><%= notice.getNoticeContent() %></td></tr>
 <tr><th colspan="2">
-<button onclick="javascript:location.href='/test1/npmove?noticeno=<%= notice.getNoticeNo() %>';">수정페이지로 이동</button> &nbsp; 
-<button onclick="javascript:location.href='/test1/ndel?noticeno=<%= notice.getNoticeNo() %>&rfile=<%= notice.getRenameFilepath()%>';">삭제하기</button> &nbsp; 
+<button onclick="javascript:location.href='/testel/npmove?noticeno=<%= notice.getNoticeNo() %>';">수정페이지로 이동</button> &nbsp; 
+<button onclick="javascript:location.href='/testel/ndel?noticeno=<%= notice.getNoticeNo() %>&rfile=<%= notice.getRenameFilepath()%>';">삭제하기</button> &nbsp; 
 <button onclick="javascript:history.go(-1);">목록</button></th></tr>
 </table>
 </body>

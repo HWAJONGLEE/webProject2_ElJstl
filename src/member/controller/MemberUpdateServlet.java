@@ -53,7 +53,7 @@ public class MemberUpdateServlet extends HttpServlet {
 		//4.
 		if(result > 0) {  //수정 성공시
 			//myinfo 서블릿을 실행해서, 내 정보보기 페이지를 내보냄
-			response.sendRedirect("/test1/myinfo?userid=" + member.getUserid());
+			response.sendRedirect("/testel/myinfo?userid=" + member.getUserid());
 			}else {  //수정 실패시
 			RequestDispatcher view = request.getRequestDispatcher("views/common/error.jsp");
 			request.setAttribute("message", member.getUserid() + " 회원의 정보 수정 실패.");

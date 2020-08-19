@@ -7,12 +7,12 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>test1</title>
+<title>testel</title>
 <script type="text/javascript">
 function moveUpdateView(){
 	//요청한 회원의 정보 수정페이지를 내보내는 서블릿을 요청함
 	//다시 요청한 회원의 아이디를 전송해서 처리함
-	location.href = "/test1/mupview?userid=<%= member.getUserid() %>";
+	location.href = "/testel/mupview?userid=<%= member.getUserid() %>";
 }
 
 function sendDelete(){
@@ -21,7 +21,7 @@ function sendDelete(){
 	//전송방식은 get 방식임
 	
 	//회원 탈퇴처리 서블릿 요청함. userid 같이 전송함
-	location.href = "/test1/mdel?userid=<%= member.getUserid() %>";
+	location.href = "/testel/mdel?userid=<%= member.getUserid() %>";
 }
 </script>
 </head>
@@ -71,7 +71,7 @@ function sendDelete(){
 	<th colspan="2">
 		<button onclick="moveUpdateView();">수정페이지로 이동</button> &nbsp; 
 		<button onclick="sendDelete();">탈퇴하기</button> &nbsp; 
-		<a href="/test1/index.jsp">시작 페이지로</a>
+		<a href="/testel/index.jsp">시작 페이지로</a>
 	</th>	
 </tr>
 </table>

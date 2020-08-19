@@ -8,14 +8,14 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>test1</title>
+<title>testel</title>
 <style type="text/css">
 form.sform {
 	display : none;
 	background : lightgray;
 }
 </style>
-<script type="text/javascript" src="/test1/resources/js/jquery-3.5.1.min.js"></script>
+<script type="text/javascript" src="/testel/resources/js/jquery-3.5.1.min.js"></script>
 <script type="text/javascript">
 //jquery 로 이벤트 처리 : form 을 보이게 안보이게 처리함
 /*
@@ -47,10 +47,10 @@ function changeLogin(element){
 	console.log(userid);
 	if(element.checked == true && element.value == "false"){
 		console.log("로그인제한 체크함");
-		location.href = "/test1/loginOK?userid=" + userid + "&ok=false";
+		location.href = "/testel/loginOK?userid=" + userid + "&ok=false";
 	}else{
 		console.log("로그인제한 해제함");
-		location.href = "/test1/loginOK?userid=" + userid + "&ok=true";		
+		location.href = "/testel/loginOK?userid=" + userid + "&ok=true";		
 	}
 }
 </script>
@@ -61,7 +61,7 @@ function changeLogin(element){
 <h1 align="center">전체 회원 관리 페이지</h1>
 <h2 align="center">현재 회원수 : <%= list.size() %> 명</h2>
 <center>
-	<button onclick="javascript:location.href='/test1/mlist'">전체 보기</button>
+	<button onclick="javascript:location.href='/testel/mlist'">전체 보기</button>
 <br>
 <br>
 <!-- 항목별 검색 기능 추가 -->
@@ -77,7 +77,7 @@ function changeLogin(element){
 
 <br>
 <!-- 회원 아이디로 검색 폼 -->
-<form action="/test1/msearch" method="post" id="idform" class="sform">
+<form action="/testel/msearch" method="post" id="idform" class="sform">
 <input type="hidden" name="action" value="id">
 <fieldset>
 <legend>검색할 아이디를 입력하세요.</legend>
@@ -86,7 +86,7 @@ function changeLogin(element){
 </fieldset>
 </form>
 <!-- 성별 검색 폼 -->
-<form action="/test1/msearch" method="post" id="genderform" class="sform">
+<form action="/testel/msearch" method="post" id="genderform" class="sform">
 <input type="hidden" name="action" value="gender">
 <fieldset>
 <legend>검색할 성별을 선택하세요.</legend>
@@ -96,7 +96,7 @@ function changeLogin(element){
 </fieldset>
 </form>
 <!-- 연령대 검색 폼 -->
-<form action="/test1/msearch" method="post" id="ageform" class="sform">
+<form action="/testel/msearch" method="post" id="ageform" class="sform">
 <input type="hidden" name="action" value="age">
 <fieldset>
 <legend>검색할 연령대를 선택하세요.</legend>
@@ -109,7 +109,7 @@ function changeLogin(element){
 </fieldset>
 </form>
 <!-- 가입날짜 검색 폼 -->
-<form action="/test1/msearch" method="post" id="enrollform" class="sform">
+<form action="/testel/msearch" method="post" id="enrollform" class="sform">
 <input type="hidden" name="action" value="enrolldate">
 <fieldset>
 <legend>검색할 가입날짜를 선택하세요.</legend>
@@ -119,7 +119,7 @@ function changeLogin(element){
 </fieldset>
 </form>
 <!-- 로그인 제한/가능 검색 폼 -->
-<form action="/test1/msearch" method="post" id="lokform" class="sform">
+<form action="/testel/msearch" method="post" id="lokform" class="sform">
 <input type="hidden" name="action" value="loginok">
 <fieldset>
 <legend>검색할 로그인 제한/가능을 선택하세요.</legend>
