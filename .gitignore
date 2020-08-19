@@ -1,0 +1,3 @@
+web/WEB-INF/
+.classpath
+web/META-INF/context.xml
