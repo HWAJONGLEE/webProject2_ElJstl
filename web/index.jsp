@@ -164,8 +164,12 @@ $(function(){
 			<!-- <a href="/test1/mlist">회원관리</a> &nbsp; &nbsp; 
 <a>공지사항관리</a>  &nbsp; &nbsp; 
 <a>게시글관리</a> &nbsp; &nbsp;  -->
-			<a href="/testel/myinfo?userid=${ sessionScope.loginMember.userid }">My
-				Page</a>
+			<c:url var="callMyinfo" value="myinfo">
+				<c:param name="userid" value="${ sessionScope.loginMember.userid }" />
+			</c:url>
+			<a href="${ callMyinfo }">My Page</a>
+			<%-- <a href="/testel/myinfo?userid=${ sessionScope.loginMember.userid }">My
+				Page</a> --%>
 			<!-- 쿼리스트링(Query String) : ?이름=전송값&이름=전송값 -->
 		</div>
 		</c:if>
@@ -175,7 +179,7 @@ $(function(){
 			<button onclick="javascript:location.href='logout';">로그아웃</button>
 			<br> <a>쪽지</a> &nbsp; &nbsp; <a>메일</a> &nbsp; &nbsp; &nbsp;
 			&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <a
-				href="/testel/myinfo?userid=${ sessionScope.loginMember.userid }">My Page</a>
+				href="${ callMyinfo }">My Page</a>
 			<!-- 쿼리스트링(Query String) : ?이름=전송값&이름=전송값 -->
 		</div>
 		</c:if>

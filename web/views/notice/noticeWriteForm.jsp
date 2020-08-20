@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8" import="member.model.vo.Member" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <%-- <%
 		Member loginMember = (Member)session.getAttribute("loginMember");    
 %> --%>
@@ -21,7 +22,7 @@
 <table align="center" width="500" border="1" cellspacing="0" 
 cellpadding="5">
 <tr><th>제 목</th><td><input type="text" name="title" size="50"></td></tr>
-<tr><th>작성자</th><td><input type="text" name="writer" readonly value="<%= loginMember.getUserid() %>"></td></tr>
+<tr><th>작성자</th><td><input type="text" name="writer" readonly value="${ sessionScope.loginMember.userid }"></td></tr>
 </tr>
 <tr>
 	<th>파일 선택 :</th>

@@ -1,10 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ page import="member.model.vo.Member, java.util.ArrayList" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%
-	ArrayList<Member> list = (ArrayList<Member>)request.getAttribute("list");
-%>    
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -61,7 +59,7 @@ function changeLogin(element){
 <c:import url="../common/header.jsp"/>
 <hr>
 <h1 align="center">전체 회원 관리 페이지</h1>
-<h2 align="center">현재 회원수 : <%= list.size() %> 명</h2>
+<h2 align="center">현재 회원수 : ${list.size()} 명</h2>
 <center>
 	<button onclick="javascript:location.href='/testel/mlist'">전체 보기</button>
 <br>
@@ -139,38 +137,44 @@ function changeLogin(element){
 <th>하고 싶은 말</th><th>가입날짜</th><th>마지막 수정날짜</th>
 <th>로그인 제한 여부</th>
 </tr>
-<% for(Member m : list){ %>
+<c:forEach items="${ requestScope.list }" var="m">
+<%-- <% for(Member m : list){ %> --%>
 <tr>
-<td><%= m.getUserid() %></td>
-<td><%= m.getUsername() %></td>
-<td><%= (m.getGender().equals("M"))? "남자" : "여자" %></td>
-<td><%= m.getAge() %></td>
-<td><%= m.getPhone() %></td>
-<td><%= m.getEmail() %></td>
-<td><%= m.getHobby() %></td>
-<td><%= m.getEtc() %></td>
-<td><%= m.getEnrollDate() %></td>
-<td><%= m.getLastModified() %></td>
+<td>${ m.userid }</td>
+<td>${ m.username }</td>
+<td>${ (m.gender eq "M") ? "남자" : "여자" }</td>
+<td>${ m.age }</td>
+<td>${ m.phone }</td>
+<td>${ m.email }</td>
+<td>${ m.hobby }</td>
+<td>${ m.etc }</td>
+<td><fmt:formatDate value="${ m.enrollDate }" type="date" dateStyle="medium" /></td>
+<td><fmt:formatDate value="${ m.lastModified }" type="date" dateStyle="medium" /></td>
 <td>
-<% if(m.getLoginok().equals("Y")){ %>
-<input type="radio" name="loginok_<%= m.getUserid() %>" onchange="changeLogin(this);"
+<%-- <% if(m.getLoginok().equals("Y")){ %> --%>
+<c:if test="${ m.loginok eq 'Y' }">
+<input type="radio" name="loginok_${ m.userid }" onchange="changeLogin(this);"
  value="true" checked> 가능 &nbsp; 
-<input type="radio" name="loginok_<%= m.getUserid() %>" onchange="changeLogin(this);"
+<input type="radio" name="loginok_${ m.userid }" onchange="changeLogin(this);"
 value="false"> 제한
-<% }else{ %>
-<input type="radio" name="loginok_<%= m.getUserid() %>" onchange="changeLogin(this);"
+</c:if>
+<c:if test="${ m.loginok eq 'N' }">
+<%-- <% }else{ %> --%>
+<input type="radio" name="loginok_${ m.userid }" onchange="changeLogin(this);"
  value="true"> 가능 &nbsp; 
-<input type="radio" name="loginok_<%= m.getUserid() %>" onchange="changeLogin(this);"
+<input type="radio" name="loginok_${ m.userid }" onchange="changeLogin(this);"
 value="false" checked> 제한
-<% } %>
+</c:if>
+<%-- <% } %> --%>
 </td>
 </tr>
-<% } %>
+</c:forEach>
+<%-- <% } %> --%>
 </table>
 <hr>
 <!-- 상대경로만 사용 가능함 -->
 <%-- <%@ include file="../common/footer.jsp" %> --%>
-<c:import url="../common/header.jsp"/>
+<c:import url="../common/footer.jsp"/>
 </body>
 </html>
 
