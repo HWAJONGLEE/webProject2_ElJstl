@@ -108,7 +108,7 @@ public class BoardService {
 			return result;
 		}
 
-		public int jboardUpdate (Board board) {
+		public int updateOrigin (Board board) {
 			Connection conn = getConnection();
 			int result = bdao.updateOrigin(conn, board);
 			if (result > 0)

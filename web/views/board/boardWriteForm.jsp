@@ -9,7 +9,7 @@
 </head>
 <body>
 <%-- <%@ include file="../common/header.jsp" %> --%>
-<c:import url="../common/header.jsp"/>
+<c:import url="/views/common/header.jsp"/>
 <hr>
 <h1 align="center">게시글 등록 페이지</h1>
 <!-- form 에서 입력값들과 파일을 같이 전송하려면 
@@ -18,7 +18,7 @@
 <table align="center" width="500" border="1" cellspacing="0" 
 cellpadding="5">
 <tr><th>제 목</th><td><input type="text" name="title" size="50"></td></tr>
-<tr><th>작성자</th><td><input type="text" name="writer" readonly value="<%= loginMember.getUserid() %>"></td></tr>
+<tr><th>작성자</th><td><input type="text" name="writer" readonly value="${ sessionScope.loginMember.userid }"></td></tr>
 </tr>
 <tr>
 	<th>파일 선택 :</th>

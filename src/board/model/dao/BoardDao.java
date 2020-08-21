@@ -112,7 +112,6 @@ public class BoardDao {
 							board.setBoardReplySeq(rset.getInt("board_reply_seq"));
 							board.setBoardReadCount(rset.getInt("board_readcount"));
 									
-							System.out.println(board);
 							list.add(board);
 						}
 				} catch (Exception e) {

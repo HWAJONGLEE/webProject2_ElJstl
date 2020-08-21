@@ -10,7 +10,15 @@
 </head>
 <body>
 	<%-- <%@ include file="../common/header.jsp" %> --%>
-	<c:import url="../common/header.jsp" />
+	<%-- <c:import url="../common/header.jsp" /> --%>
+	<%-- 절대경로로 대상 파일의 위치를 지정한 경우 --%>
+	<%-- 절대경로로 대상 파일의 위치를 지정한 경우
+	/context-root : 경로명 맨앞에 표기함, web 까지의 경로를 의미함
+	JSTL 에서는 절대 경로 표기법이 달라짐
+	/context-root/폴더명/파일명 ==>/ 
+	/testel/ ==> /--%>
+	<c:import url="/views/common/header.jsp" />
+	
 	<hr>
 	<h1 align="center">공지사항</h1>
 	<br>
@@ -27,7 +35,10 @@
 			<%-- <% for(Notice n : list){ %> --%>
 			<tr>
 				<td align="right">${ n.noticeNo }</td>
-				<td><a href="/testel/ndetail?noticeno=${ n.noticeNo }">${ n.noticeTitle }</a></td>
+				<c:url var="und" value="/ndetail">
+					<c:param name="noticeno" value="${ n.noticeNo }"/>
+				</c:url>
+				<td><a href="${ und }">${ n.noticeTitle }</a></td>
 				<td>${ n.noticeWriter }</td>
 				<td align="center">
 				<c:if test="${ !empty n.originalFilepath }">
