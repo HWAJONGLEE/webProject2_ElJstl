@@ -178,8 +178,11 @@ $(function(){
 			${sessionScope.loginMember.username}	님 <br>
 			<button onclick="javascript:location.href='logout';">로그아웃</button>
 			<br> <a>쪽지</a> &nbsp; &nbsp; <a>메일</a> &nbsp; &nbsp; &nbsp;
-			&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <a
-				href="${ callMyinfo }">My Page</a>
+			&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+			<c:url var="callMyinfo2" value="myinfo">
+				<c:param name="userid" value="${ loginMember.userid }" />
+			</c:url>
+			<a href="${ callMyinfo2 }">My Page</a>
 			<!-- 쿼리스트링(Query String) : ?이름=전송값&이름=전송값 -->
 		</div>
 		</c:if>
