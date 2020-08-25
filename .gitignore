@@ -2,3 +2,5 @@ web/WEB-INF/
 .classpath
 web/META-INF/context.xml
 web/resources/nupfiles/20200820173552.jpg
+*.class
+*.properties
