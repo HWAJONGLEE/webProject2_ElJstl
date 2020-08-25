@@ -15,8 +15,8 @@
 <h2 align="center">${ notice.noticeNo } 번 공지 상세보기</h2>
 <br>
 <table align="center" width="500" border="1" cellspacing="0" cellpadding="5">
-<tr><th>제 목</th><td>${ notice.noticeNo } </td></tr>
-<tr><th>작성자</th><td>${ notice.noticeNo } </td></tr>
+<tr><th>제 목</th><td>${ notice.noticeTitle } </td></tr>
+<tr><th>작성자</th><td>${ notice.noticeWriter } </td></tr>
 <tr><th>등록날짜</th><td><fmt:formatDate value="${ notice.noticeDate }" pattern="yyyy-MM-dd"/></td></tr>
 <tr>
 	<th>첨부파일</th>
